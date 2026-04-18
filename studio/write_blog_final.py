@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+content = """import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { client } from '../lib/sanity';
 
@@ -9,25 +9,43 @@ export default function Blog() {
 
   useEffect(() => {
     client
-      .fetch(`*[_type == 'post'] | order(publishedAt desc) { _id, title, slug, publishedAt, excerpt }`)
-      .then((data) => { setPosts(data); setLoading(false); })
+      .fetch(`*[_type == "post"] | order(publishedAt desc) {
+        _id,
+        title,
+        slug,
+        publishedAt,
+        excerpt,
+        body
+      }`)
+      .then((data) => {
+        setPosts(data);
+        setLoading(false);
+      })
       .catch(() => setLoading(false));
   }, []);
 
   return (
     <div style={{ background: '#C8BFB0', minHeight: '100vh', padding: '14px', fontFamily: 'Inter, sans-serif' }}>
+
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
         <button onClick={() => navigate('/')} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 16, color: '#3a3430', background: '#F5F0E8', border: 'none', borderRadius: 40, padding: '10px 24px', cursor: 'pointer', fontFamily: 'Inter, sans-serif', fontWeight: 500 }}>
-          ← Home
+          \\u2190 Home
         </button>
         <a href='https://kaavyaindhu.sanity.studio' target='_blank' rel='noreferrer'
-          style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14, color: '#c4a0b0', background: '#F5F0E8', border: '1px dashed #E8729A', borderRadius: 40, padding: '8px 20px', fontFamily: 'Caveat, cursive', textDecoration: 'none', opacity: 0.75 }}>
+          style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13, color: '#c4a0b0', background: '#F5F0E8', border: '1px dashed #E8729A', borderRadius: 40, padding: '8px 18px', cursor: 'pointer', fontFamily: 'Caveat, cursive', textDecoration: 'none', opacity: 0.7 }}>
           + write a post
         </a>
       </div>
+
       <h1 style={{ fontFamily: 'DM Serif Display, serif', fontSize: 'clamp(52px, 9vw, 80px)', color: '#E8729A', lineHeight: 1, margin: 0 }}>My Blog</h1>
       <p style={{ fontFamily: 'Caveat, cursive', fontSize: 28, color: '#9a9285', margin: '6px 0 28px' }}>thoughts and writing</p>
-      {loading && (<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 300 }}><p style={{ fontFamily: 'Caveat, cursive', fontSize: 24, color: '#9a9285' }}>loading posts...</p></div>)}
+
+      {loading && (
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 300 }}>
+          <p style={{ fontFamily: 'Caveat, cursive', fontSize: 24, color: '#9a9285' }}>loading posts...</p>
+        </div>
+      )}
+
       {!loading && posts.length === 0 && (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: 300, textAlign: 'center' }}>
           <svg width='180' height='160' viewBox='0 0 180 160' fill='none'>
@@ -35,10 +53,11 @@ export default function Blog() {
             <path d='M90 118 C90 118 32 82 32 50 C32 34 44 26 54 26 C63 26 71 32 77 42' stroke='#E8729A' strokeWidth='1.4' fill='none' strokeLinecap='round' opacity='0.4'/>
           </svg>
           <p style={{ fontFamily: 'DM Serif Display, serif', fontSize: 42, color: '#E8729A', margin: '20px 0 0' }}>coming soon</p>
-          <p style={{ fontFamily: 'Caveat, cursive', fontSize: 28, color: '#9a9285', margin: '8px 0 0' }}>I’m writing ♥</p>
+          <p style={{ fontFamily: 'Caveat, cursive', fontSize: 28, color: '#9a9285', margin: '8px 0 0' }}>I'm writing \\u2665</p>
           <p style={{ fontSize: 17, color: '#7a6e68', lineHeight: 1.8, maxWidth: 420, margin: '20px auto 0' }}>This space will be home to my thoughts, life lessons, and personal stories. Check back soon.</p>
         </div>
       )}
+
       {!loading && posts.length > 0 && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           {posts.map((post, idx) => {
@@ -55,15 +74,27 @@ export default function Blog() {
               <div key={post._id} style={{ background: c.bg, borderRadius: 14, padding: '36px 44px', position: 'relative', overflow: 'hidden' }}>
                 <p style={{ fontFamily: 'Caveat, cursive', fontSize: 15, color: c.date, letterSpacing: 1, textTransform: 'uppercase', margin: '0 0 8px' }}>{date}</p>
                 <h2 style={{ fontFamily: 'DM Serif Display, serif', fontSize: 38, color: c.title, margin: '0 0 16px', lineHeight: 1.1 }}>{post.title}</h2>
-                {post.excerpt && <p style={{ fontSize: 17, color: c.text, lineHeight: 1.85, maxWidth: 680, margin: '0 0 20px' }}>{post.excerpt}</p>}
+                {post.excerpt && (
+                  <p style={{ fontSize: 17, color: c.text, lineHeight: 1.85, maxWidth: 680, margin: '0 0 20px' }}>{post.excerpt}</p>
+                )}
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 500, background: c.accent, color: '#fff', borderRadius: 40, padding: '8px 20px' }}>
-                  read more →
+                  read more \\u2192
                 </div>
+                <svg style={{ position: 'absolute', bottom: 16, right: 24, opacity: 0.12 }} width='80' height='60' viewBox='0 0 80 60' fill='none' stroke={c.accent} strokeWidth='1.4'>
+                  <path d='M10 50 Q20 30 35 40 Q50 18 65 28 Q75 20 78 14' strokeLinecap='round' strokeLinejoin='round'/>
+                  <circle cx='35' cy='40' r='3' fill={c.accent}/>
+                  <circle cx='65' cy='28' r='3' fill={c.accent}/>
+                </svg>
               </div>
             );
           })}
         </div>
       )}
+
     </div>
   );
 }
+"""
+with open("src/pages/Blog.jsx", "w") as f:
+    f.write(content)
+print("Blog.jsx updated with write button!")
