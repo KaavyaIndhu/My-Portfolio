@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+content = """import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { client } from '../lib/sanity';
 
@@ -27,7 +27,7 @@ export default function Blog() {
   return (
     <div style={{ background: '#C8BFB0', minHeight: '100vh', padding: '14px', fontFamily: 'Inter, sans-serif' }}>
       <button onClick={() => navigate('/')} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 16, color: '#3a3430', background: '#F5F0E8', border: 'none', borderRadius: 40, padding: '10px 24px', cursor: 'pointer', marginBottom: 14, fontFamily: 'Inter, sans-serif', fontWeight: 500, width: 'fit-content' }}>
-        \u2190 Home
+        \\u2190 Home
       </button>
 
       <h1 style={{ fontFamily: 'DM Serif Display, serif', fontSize: 'clamp(52px, 9vw, 80px)', color: '#E8729A', lineHeight: 1, margin: 0 }}>My Blog</h1>
@@ -45,7 +45,7 @@ export default function Blog() {
             <path d='M90 130 C90 130 20 90 20 50 C20 28 36 14 54 14 C65 14 75 20 81 30 C87 20 97 14 108 14 C126 14 142 28 142 50 C142 90 90 130 90 130 Z' fill='#f5d4e0' stroke='#E8729A' strokeWidth='2'/>
           </svg>
           <p style={{ fontFamily: 'DM Serif Display, serif', fontSize: 36, color: '#E8729A', margin: '20px 0 0' }}>coming soon</p>
-          <p style={{ fontFamily: 'Caveat, cursive', fontSize: 26, color: '#9a9285', margin: '8px 0 0' }}>I'm writing \u2665</p>
+          <p style={{ fontFamily: 'Caveat, cursive', fontSize: 26, color: '#9a9285', margin: '8px 0 0' }}>I'm writing \\u2665</p>
           <p style={{ fontSize: 16, color: '#7a6e68', lineHeight: 1.8, maxWidth: 400, margin: '20px auto 0' }}>This space will be home to my thoughts, life lessons, and personal stories. Check back soon.</p>
         </div>
       )}
@@ -70,7 +70,7 @@ export default function Blog() {
                   <p style={{ fontSize: 17, color: c.text, lineHeight: 1.85, maxWidth: 680, margin: '0 0 20px' }}>{post.excerpt}</p>
                 )}
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 500, background: c.accent, color: '#fff', borderRadius: 40, padding: '8px 20px', cursor: 'default' }}>
-                  read more \u2192
+                  read more \\u2192
                 </div>
                 <svg style={{ position: 'absolute', bottom: 16, right: 24, opacity: 0.12 }} width='80' height='60' viewBox='0 0 80 60' fill='none' stroke={c.accent} strokeWidth='1.4'>
                   <path d='M10 50 Q20 30 35 40 Q50 18 65 28 Q75 20 78 14' strokeLinecap='round' strokeLinejoin='round'/>
@@ -85,3 +85,7 @@ export default function Blog() {
     </div>
   );
 }
+"""
+with open("src/pages/Blog.jsx", "w") as f:
+    f.write(content)
+print("Blog.jsx updated!")
