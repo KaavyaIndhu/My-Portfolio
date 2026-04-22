@@ -113,17 +113,7 @@
     overflow-wrap: break-word !important;
     word-break: normal !important;
   }
-  /* Project title specifically needs to wrap cleanly */
-  .proj-card-inner h2 {
-    word-break: normal !important;
-    overflow-wrap: anywhere !important;
-    font-size: 26px !important;
-  }
-  .proj-card-inner p {
-    font-size: 14px !important;
-    line-height: 1.7 !important;
-    max-width: 100% !important;
-  }
+
 
   /* Fix horizontal scroll */
   body {

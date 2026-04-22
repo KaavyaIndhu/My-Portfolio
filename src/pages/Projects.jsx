@@ -112,7 +112,7 @@ export default function Projects() {
       <p style={{ fontFamily: 'Caveat, cursive', fontSize: 28, color: '#9a9285', margin: '6px 0 20px' }}>things I have built</p>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
         {projects.map((p, idx) => (
-          <div key={p.id} onMouseEnter={() => setHovered(idx)} onMouseLeave={() => setHovered(null)}
+          <div key={p.id} className='proj-card-inner' onMouseEnter={() => setHovered(idx)} onMouseLeave={() => setHovered(null)}
             style={{ background: p.bg, borderRadius: 14, padding: '44px 44px',
               display: 'flex', flexDirection: 'row', gap: 0,
               alignItems: 'center', minHeight: 300, position: 'relative', overflow: 'hidden',
