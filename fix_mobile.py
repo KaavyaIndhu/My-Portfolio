@@ -1,0 +1,91 @@
+css = """
+@media (max-width: 768px) {
+
+  /* ── HOME: hero stacks vertically ── */
+  .hero-box {
+    flex-direction: column !important;
+    min-height: unset !important;
+  }
+  .hero-left {
+    width: 100% !important;
+    padding: 32px 20px 20px !important;
+  }
+  .hero-left div[style*="110px"] {
+    font-size: 72px !important;
+  }
+  .hero-center {
+    padding: 0 20px 24px !important;
+    flex: unset !important;
+  }
+  .hero-photo {
+    width: 100% !important;
+    height: 340px !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .hero-photo > div {
+    width: 200px !important;
+    height: 280px !important;
+    border-radius: 100px 100px 0 0 !important;
+  }
+
+  /* ── HOME: nav cards stack to 1 col ── */
+  .nav-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── HOME: connect section stacks ── */
+  .connect-grid {
+    grid-template-columns: 1fr !important;
+    padding: 32px 20px !important;
+  }
+
+  /* ── ALL PAGES: general padding fix ── */
+  .page-wrap {
+    padding: 10px !important;
+  }
+
+  /* ── PROJECTS: stack image below content ── */
+  .proj-card {
+    flex-direction: column !important;
+    padding: 28px 20px !important;
+  }
+  .proj-card > div:first-child {
+    padding-right: 0 !important;
+  }
+
+  /* ── SKILLS: stack to 1 col ── */
+  .skills-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── EXPERIENCE: role blocks stack ── */
+  .role-block {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  .role-block.flip {
+    flex-direction: column !important;
+  }
+  .pic-box {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  /* ── FONT SIZE fixes for small screens ── */
+  h1[style*="80px"], h1[style*="72px"] {
+    font-size: 52px !important;
+  }
+  h2[style*="48px"] {
+    font-size: 32px !important;
+  }
+  p[style*="word-one-per-line"] {
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+}
+"""
+
+with open("src/mobile.css", "w") as f:
+    f.write(css)
+print("mobile.css created!")

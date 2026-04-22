@@ -97,11 +97,11 @@ export default function Experience() {
       <h1 style={{ fontFamily: 'DM Serif Display, serif', fontSize: 'clamp(52px, 9vw, 80px)', color: '#E8729A', lineHeight: 1, margin: 0 }}>My Experience</h1>
       <p style={{ fontFamily: 'Caveat, cursive', fontSize: 28, color: '#9a9285', margin: '6px 0 20px' }}>where I have been</p>
 
-      <div style={{ background: '#F5F0E8', borderRadius: 14, padding: '40px 44px 48px', marginBottom: 10 }}>
+      <div className='exp-company-card' style={{ background: '#F5F0E8', borderRadius: 14, padding: '40px 44px 48px', marginBottom: 10 }}>
         <p style={{ fontFamily: 'Caveat, cursive', fontSize: 18, color: '#c4a0b0', letterSpacing: 1, textTransform: 'uppercase', margin: '0 0 6px' }}>01 / internship · 2 months</p>
         <h2 style={{ fontFamily: 'DM Serif Display, serif', fontSize: 38, color: '#3a3430', margin: '0 0 36px', lineHeight: 1.1 }}>Foodworks Gourmet Private Limited (TOVO)</h2>
 
-        <div style={{ display: 'flex', gap: 36, alignItems: 'flex-start' }}>
+        <div className='exp-role-block' style={{ display: 'flex', gap: 36, alignItems: 'flex-start' }}>
           <PicBox bg='#EDE7DC' doodle={doodleHR} />
           <div style={{ flex: 1 }}>
             <h3 style={{ fontFamily: 'DM Serif Display, serif', fontSize: 30, color: '#3a3430', margin: '0 0 4px' }}>Human Resources</h3>
@@ -114,7 +114,7 @@ export default function Experience() {
 
         <ArrowConnector direction='right-to-left' label='also at TOVO' color='#c4a0b0' />
 
-        <div style={{ display: 'flex', flexDirection: 'row-reverse', gap: 36, alignItems: 'flex-start' }}>
+        <div className='exp-role-block-flip' style={{ display: 'flex', flexDirection: 'row-reverse', gap: 36, alignItems: 'flex-start' }}>
           <PicBox bg='#EDE7DC' doodle={doodleMarketing} />
           <div style={{ flex: 1 }}>
             <h3 style={{ fontFamily: 'DM Serif Display, serif', fontSize: 30, color: '#3a3430', margin: '0 0 4px' }}>Marketing</h3>
@@ -126,11 +126,11 @@ export default function Experience() {
         </div>
       </div>
 
-      <div style={{ background: '#EDE0E8', borderRadius: 14, padding: '40px 44px 48px' }}>
+      <div className='exp-company-card' style={{ background: '#EDE0E8', borderRadius: 14, padding: '40px 44px 48px' }}>
         <p style={{ fontFamily: 'Caveat, cursive', fontSize: 18, color: '#b888a4', letterSpacing: 1, textTransform: 'uppercase', margin: '0 0 6px' }}>02 / current · club</p>
         <h2 style={{ fontFamily: 'DM Serif Display, serif', fontSize: 38, color: '#5a2a42', margin: '0 0 36px', lineHeight: 1.1 }}>Centre for Social Entrepreneurship and Development (CSED)</h2>
 
-        <div style={{ display: 'flex', gap: 36, alignItems: 'flex-start' }}>
+        <div className='exp-role-block' style={{ display: 'flex', gap: 36, alignItems: 'flex-start' }}>
           <PicBox bg='#e8ccd8' doodle={doodleRD} />
           <div style={{ flex: 1 }}>
             <h3 style={{ fontFamily: 'DM Serif Display, serif', fontSize: 30, color: '#5a2a42', margin: '0 0 4px' }}>R&D Member</h3>
@@ -143,7 +143,7 @@ export default function Experience() {
 
         <ArrowConnector direction='right-to-left' label='also at CSED' color='#b888a4' />
 
-        <div style={{ display: 'flex', flexDirection: 'row-reverse', gap: 36, alignItems: 'flex-start' }}>
+        <div className='exp-role-block-flip' style={{ display: 'flex', flexDirection: 'row-reverse', gap: 36, alignItems: 'flex-start' }}>
           <PicBox bg='#e8ccd8' doodle={doodleTech} />
           <div style={{ flex: 1 }}>
             <h3 style={{ fontFamily: 'DM Serif Display, serif', fontSize: 30, color: '#5a2a42', margin: '0 0 4px' }}>Technical Team Member</h3>
@@ -156,7 +156,7 @@ export default function Experience() {
 
         <ArrowConnector direction='left-to-right' label='then promoted to' color='#b888a4' />
 
-        <div style={{ display: 'flex', gap: 36, alignItems: 'flex-start' }}>
+        <div className='exp-role-block' style={{ display: 'flex', gap: 36, alignItems: 'flex-start' }}>
           <PicBox bg='#e8ccd8' doodle={doodleVice} />
           <div style={{ flex: 1 }}>
             <h3 style={{ fontFamily: 'DM Serif Display, serif', fontSize: 30, color: '#5a2a42', margin: '0 0 4px' }}>Vice Chairperson</h3>

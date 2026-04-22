@@ -149,7 +149,7 @@ export default function Home() {
   return (
     <div style={{ backgroundColor: '#C8BFB0', minHeight: '100vh', padding: '14px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
 
-      <div style={{ backgroundColor: '#F5F0E8', borderRadius: '14px', display: 'flex', overflow: 'hidden', minHeight: '460px', position: 'relative' }}>
+      <div className='hero-outer' style={{ backgroundColor: '#F5F0E8', borderRadius: '14px', display: 'flex', overflow: 'hidden', minHeight: '460px', position: 'relative' }}>
 
         {/* bottom watermark — KaavyaIndhu */}
         <div style={{ position: 'absolute', bottom: '-30px', left: '-10px', fontFamily: 'DM Serif Display, serif', fontSize: '200px', color: '#E8729A', opacity: 0.055, lineHeight: 1, userSelect: 'none', pointerEvents: 'none', whiteSpace: 'nowrap' }}>KaavyaIndhu</div>
@@ -228,7 +228,7 @@ export default function Home() {
         </svg>
 
         {/* LEFT — name only */}
-        <div style={{ width: '360px', flexShrink: 0, padding: '52px 40px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', position: 'relative', zIndex: 1 }}>
+        <div className='hero-left' style={{ width: '360px', flexShrink: 0, padding: '52px 40px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', position: 'relative', zIndex: 1 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 16px', borderRadius: '30px', border: '1px solid #E8729A', fontFamily: 'Caveat, cursive', fontSize: '17px', color: '#E8729A', width: 'fit-content', marginBottom: '14px' }}>
             <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#E8729A', display: 'inline-block' }}></span>
             available for projects
@@ -238,7 +238,7 @@ export default function Home() {
         </div>
 
         {/* CENTER — all details */}
-        <div style={{ flex: 1, padding: '52px 44px 52px 52px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative', zIndex: 1 }}>
+        <div className='hero-center' style={{ flex: 1, padding: '52px 44px 52px 52px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative', zIndex: 1 }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
               <div style={{ fontSize: '13px', color: '#7a7065', letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 500 }}>Full Stack Developer</div>
@@ -265,7 +265,7 @@ export default function Home() {
         </div>
 
         {/* RIGHT — photo panel */}
-        <div style={{ width: '420px', backgroundColor: '#E0D9CE', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-end', flexShrink: 0, position: 'relative', zIndex: 1 }}>
+        <div className='hero-photo-panel' style={{ width: '420px', backgroundColor: '#E0D9CE', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-end', flexShrink: 0, position: 'relative', zIndex: 1 }}>
           
           {/* pink doodles around photo */}
           <span style={{ position: 'absolute', top: '18px', right: '32px', fontFamily: 'Caveat, cursive', fontSize: '32px', color: '#E8729A', opacity: 0.35 }}>✦</span>
@@ -291,23 +291,23 @@ export default function Home() {
             <circle cx="18" cy="18" r="14" stroke="#E8729A" strokeWidth="1.5" strokeDasharray="4 4"/>
           </svg>
 
-          <div style={{ width: '360px', height: '430px', borderRadius: '180px 180px 0 0', overflow: 'hidden', flexShrink: 0 }}>
+          <div className='photo-arch' style={{ width: '360px', height: '430px', borderRadius: '180px 180px 0 0', overflow: 'hidden', flexShrink: 0 }}>
             <img src="/photo.png" alt="Kaavya Indhu" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} />
           </div>
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+      <div className='nav-grid' style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
         <NavCard num="01" title="My Skills" sub="What I bring to the table" doodle="o" illustration={<SkillsIllustration />} squiggle onClick={() => navigate('/skills')} />
         <NavCard num="02" title="My Projects" sub="Things I have built" doodle="+" illustration={<ProjectsIllustration />} onClick={() => navigate('/projects')} />
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+      <div className='nav-grid' style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
         <NavCard num="03" title="My Blog" sub="Thoughts and writing" doodle="~ life stories ~" illustration={<BlogIllustration />} squiggle onClick={() => navigate('/blog')} />
         <NavCard num="04" title="My Experience" sub="Where I have been" doodle="~ work ~" illustration={<ExperienceIllustration />} onClick={() => navigate('/experience')} />
       </div>
 
-      <div style={{ backgroundColor: '#F5F0E8', borderRadius: '14px', padding: '52px 48px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', minHeight: '280px', position: 'relative', overflow: 'hidden' }}>
+      <div className='connect-section' style={{ backgroundColor: '#F5F0E8', borderRadius: '14px', padding: '52px 48px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', minHeight: '280px', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', bottom: '-20px', right: '-10px', fontFamily: 'DM Serif Display, serif', fontSize: '160px', color: '#E8729A', opacity: 0.04, lineHeight: 1, userSelect: 'none', whiteSpace: 'nowrap' }}>connect</div>
         <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column' }}>
           <div style={{ fontFamily: 'DM Serif Display, serif', fontSize: '52px', color: '#3a3430', lineHeight: 1, marginBottom: '6px' }}>Connect<br />with me</div>
