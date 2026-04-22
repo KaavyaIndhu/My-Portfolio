@@ -122,7 +122,7 @@ export default function Projects() {
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 12, paddingRight: 8 }}>
               <p style={{ fontFamily: 'Caveat, cursive', fontSize: 18, color: p.numColor, letterSpacing: 1, textTransform: 'uppercase', margin: 0 }}>{p.id} / {p.category}</p>
               <h2 style={{ fontFamily: 'DM Serif Display, serif', fontSize: 'clamp(26px, 3.5vw, 40px)', color: p.titleColor, margin: 0, lineHeight: 1.1 }}>{p.title}</h2>
-              <p style={{ fontSize: 16, color: p.aboutColor, lineHeight: 1.85, margin: 0 }}>{p.about}</p>
+              <p style={{ fontSize: 16, color: p.aboutColor, lineHeight: 1.85, margin: 0, maxWidth: '100%' }}>{p.about}</p>
               <p style={{ fontSize: 13, fontWeight: 500, letterSpacing: 1, textTransform: 'uppercase', color: p.labelColor, margin: '10px 0 0' }}>Tech Stack</p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                 {p.tech.map((t) => (<span key={t} style={{ background: p.pillBg, color: p.pillText, borderRadius: 40, padding: '7px 18px', fontSize: 14 }}>{t}</span>))}

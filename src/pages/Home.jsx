@@ -234,7 +234,7 @@ export default function Home() {
             available for projects
           </div>
           <div style={{ fontFamily: 'Caveat, cursive', fontSize: '20px', color: '#9a9285', marginBottom: '8px' }}>Hi, since you are new here</div>
-          <div style={{ fontFamily: 'DM Serif Display, serif', fontSize: '110px', color: '#E8729A', lineHeight: '0.88' }}>Kaavya<br />Indhu</div>
+          <div className='hero-name' style={{ fontFamily: 'DM Serif Display, serif', fontSize: '110px', color: '#E8729A', lineHeight: '0.88' }}>Kaavya<br />Indhu</div>
         </div>
 
         {/* CENTER — all details */}
