@@ -136,7 +136,7 @@ export default function Projects() {
               </div>
             </div>
             <MiddleDoodle accentColor={p.accentColor} />
-            <ImageCarousel images={p.images} imgBg={p.imgBg} arrowBg={p.arrowBg} arrowText={p.arrowText} dotBg={p.dotBg} dotActive={p.dotActive} />
+            <div className='proj-carousel'><ImageCarousel images={p.images} imgBg={p.imgBg} arrowBg={p.arrowBg} arrowText={p.arrowText} dotBg={p.dotBg} dotActive={p.dotActive} /></div>
           </div>
         ))}
       </div>

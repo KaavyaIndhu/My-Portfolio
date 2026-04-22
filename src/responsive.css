@@ -14,7 +14,7 @@
     flex-shrink: unset !important;
   }
   .hero-name {
-    font-size: 52px !important;
+    font-size: 58px !important;
   }
   .hero-center {
     flex: unset !important;
@@ -55,12 +55,28 @@
     padding: 24px 18px !important;
     min-height: unset !important;
   }
+  .proj-card-inner h2 {
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+  .proj-card-inner p {
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+    max-width: 100% !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+  .proj-card-inner span {
+    font-size: 12px !important;
+  }
   .proj-carousel {
     width: 100% !important;
   }
   .proj-carousel > div:first-child {
     width: 100% !important;
-    height: 200px !important;
+    height: 180px !important;
   }
 
   /* Skills cards */
@@ -93,7 +109,7 @@
   }
 
   /* General text overflow fix — only for elements that need it */
-  p, h1, h2, h3, span {
+  p, h1, h2, h3 {
     overflow-wrap: break-word !important;
     word-break: normal !important;
   }
